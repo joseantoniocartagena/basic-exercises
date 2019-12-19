@@ -1,0 +1,78 @@
+<h1>Reverse string</h1>
+String:
+<input [(ngModel)]="word" (keyup)="submit()" type="text" placeholder="word" />
+<br />
+<div>
+  <br />
+  <table class="info" *ngIf="reverse">
+    <tr>
+      <th>Original</th>
+      <th>Reverse</th>
+    </tr>
+    <tr>
+      <td>{{ word }}</td>
+      <td>{{ reverse }}</td>
+    </tr>
+  </table>
+</div>
+<br />
+<p>Code:</p>
+<div
+  style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <pre style="margin: 0; line-height: 125%">
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre
+          >
+        </td>
+        <td>
+          <pre
+            style="margin: 0; line-height: 125%"
+          ><span style="color: #008800; font-weight: bold">import</span> &#123; Component &#125; from <span style="background-color: #fff0f0">"@angular/core"</span>;
+
+<span style="color: #FF0000; background-color: #FFAAAA">@</span>Component(&#123;
+  selector<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"app-reverse-string"</span>,
+  templateUrl<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"./reverse-string.component.html"</span>,
+  styleUrls<span style="color: #333333">:</span> [<span style="background-color: #fff0f0">"./reverse-string.component.css"</span>]
+&#125;)
+<span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">class</span> ReverseStringComponent &#123;
+  <span style="color: #008800; font-weight: bold">private</span> word;
+  <span style="color: #008800; font-weight: bold">private</span> reverse;
+  submit() &#123;
+    <span style="color: #008800; font-weight: bold">this</span>.reverse <span style="color: #333333">=</span> <span style="background-color: #fff0f0">""</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.reverseWord(<span style="color: #008800; font-weight: bold">this</span>.word.length <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+  &#125;
+  reverseWord(top) &#123;
+    <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">this</span>.word.length <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">this</span>.reverse.length) <span style="color: #008800; font-weight: bold">return</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.reverse <span style="color: #333333">+=</span> <span style="color: #008800; font-weight: bold">this</span>.word[top];
+    <span style="color: #008800; font-weight: bold">this</span>.reverseWord(top <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+  &#125;
+&#125;
+</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

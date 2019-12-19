@@ -1,0 +1,78 @@
+<h1>Check if word is palindrome</h1>
+String:
+<input [(ngModel)]="word" (keyup)="submit()" type="text" placeholder="word" />
+<br />
+<div *ngIf="word">
+  <p *ngIf="palindrome">The word is palindrome</p>
+  <p *ngIf="!palindrome">The word isn't palindrome</p>
+</div>
+<p>Code:</p>
+<div
+  style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <pre style="margin: 0; line-height: 125%">
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17
+   18
+   19
+   20
+   21
+   22
+   23
+   24
+   25
+   26</pre
+          >
+        </td>
+        <td>
+          <pre
+            style="margin: 0; line-height: 125%"
+          ><span style="color: #008800; font-weight: bold">import</span> &#123; Component &#125; from <span style="background-color: #fff0f0">"@angular/core"</span>;
+   
+   <span style="color: #FF0000; background-color: #FFAAAA">@</span>Component(&#123;
+     selector<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"app-check-palindrome"</span>,
+     templateUrl<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"./check-palindrome.component.html"</span>,
+     styleUrls<span style="color: #333333">:</span> [<span style="background-color: #fff0f0">"./check-palindrome.component.css"</span>]
+   &#125;)
+   <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">class</span> CheckPalindromeComponent &#123;
+     <span style="color: #008800; font-weight: bold">private</span> word;
+     <span style="color: #008800; font-weight: bold">private</span> palindrome;
+     submit() &#123;
+       <span style="color: #008800; font-weight: bold">let</span> top <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.word.length <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>,
+         bottom <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+       <span style="color: #008800; font-weight: bold">this</span>.word <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.word.toUpperCase();
+       <span style="color: #008800; font-weight: bold">this</span>.palindrome <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span>;
+       <span style="color: #008800; font-weight: bold">while</span> (top <span style="color: #333333">&gt;</span> bottom) &#123;
+         <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>(<span style="color: #008800; font-weight: bold">this</span>.word[top] <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">this</span>.word[bottom])) &#123;
+           <span style="color: #008800; font-weight: bold">this</span>.palindrome <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span>;
+         &#125;
+         top<span style="color: #333333">--</span>;
+         bottom<span style="color: #333333">++</span>;
+       &#125;
+     &#125;
+   &#125;
+   </pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

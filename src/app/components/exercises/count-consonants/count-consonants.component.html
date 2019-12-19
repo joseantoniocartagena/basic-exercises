@@ -1,0 +1,64 @@
+<h1>Count constants on string</h1>
+String:
+<input [(ngModel)]="word" (keyup)="submit()" type="text" placeholder="word" />
+<br />
+<p *ngIf="consonantsNum">Consonants number: {{ consonantsNum }}</p>
+<br />
+<p>Code:</p>
+<div
+  style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <pre style="margin: 0; line-height: 125%">
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17</pre
+          >
+        </td>
+        <td>
+          <pre
+            style="margin: 0; line-height: 125%"
+          ><span style="color: #008800; font-weight: bold">import</span>  &#123; Component  &#125; from <span style="background-color: #fff0f0">"@angular/core"</span>;
+   
+   <span style="color: #FF0000; background-color: #FFAAAA">@</span>Component( &#123;
+     selector<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"app-count-consonants"</span>,
+     templateUrl<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"./count-consonants.component.html"</span>,
+     styleUrls<span style="color: #333333">:</span> [<span style="background-color: #fff0f0">"./count-consonants.component.css"</span>]
+    &#125;)
+   <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">class</span> CountConsonantsComponent  &#123;
+     <span style="color: #008800; font-weight: bold">private</span> consonantsNum;
+     <span style="color:#FF0000">/* I'm pretty sure there is a better expression than this one</span>
+     <span style="color: #FF0000;">that can be obtained for exaple by the rest of /[a-z]/gi and /[aeiou]/gi</span>
+     <span style="color: #FF0000;">the thing is right now I can't remember how to do it. Me bad.</span>
+     <span style="color:#FF0000">but I hope that this is enough to you */</span>
+     <span style="color: #008800; font-weight: bold">private</span> consonatsRegExp <span style="color: #333333">=</span> <span style="color: #000000; background-color: #fff0ff">/[bcdfghjklmnpqrstvwxys]/gi</span>;
+     <span style="color: #008800; font-weight: bold">private</span> word;
+     submit()  &#123;
+       <span style="color: #008800; font-weight: bold">this</span>.consonantsNum <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.word.match(<span style="color: #008800; font-weight: bold">this</span>.consonatsRegExp)
+         <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">this</span>.word.match(<span style="color: #008800; font-weight: bold">this</span>.consonatsRegExp).length
+         <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">undefined</span>;
+      &#125;
+    &#125;
+   </pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

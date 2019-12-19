@@ -1,0 +1,66 @@
+<h1>Reverse array</h1>
+First var:
+<input [(ngModel)]="var1" type="number" placeholder="Counting numbers" />
+Second var:
+<input [(ngModel)]="var2" type="number" placeholder="Counting numbers" />
+<br />
+<button (click)="submit()">Submit</button>
+<br />
+<ul>
+  <li>Var1 => {{ var1 }}</li>
+  <li>Var2 => {{ var2 }}</li>
+</ul>
+<p>Code:</p>
+<div
+  style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <pre style="margin: 0; line-height: 125%">
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17</pre
+          >
+        </td>
+        <td>
+          <pre
+            style="margin: 0; line-height: 125%"
+          ><span style="color: #008800; font-weight: bold">import</span> &#123; Component &#125; from <span style="background-color: #fff0f0">"@angular/core"</span>;
+   
+   <span style="color: #FF0000; background-color: #FFAAAA">@</span>Component(&#123;
+     selector<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"app-swap-vars"</span>,
+     templateUrl<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"./swap-vars.component.html"</span>,
+     styleUrls<span style="color: #333333">:</span> [<span style="background-color: #fff0f0">"./swap-vars.component.css"</span>]
+   &#125;)
+   <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">class</span> SwapVarsComponent &#123;
+     <span style="color: #008800; font-weight: bold">private</span> var1;
+     <span style="color: #008800; font-weight: bold">private</span> var2;
+   
+     submit() &#123;
+       <span style="color: #008800; font-weight: bold">this</span>.var1 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.var1 <span style="color: #333333">+</span> <span style="color: #008800; font-weight: bold">this</span>.var2;
+       <span style="color: #008800; font-weight: bold">this</span>.var2 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.var1 <span style="color: #333333">-</span> <span style="color: #008800; font-weight: bold">this</span>.var2;
+       <span style="color: #008800; font-weight: bold">this</span>.var1 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.var1 <span style="color: #333333">-</span> <span style="color: #008800; font-weight: bold">this</span>.var2;
+     &#125;
+   &#125;
+   </pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
