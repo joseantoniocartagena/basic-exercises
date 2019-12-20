@@ -17,6 +17,7 @@ import { CheckPalindromeComponent } from './components/exercises/check-palindrom
 import { ReverseStringComponent } from './components/exercises/reverse-string/reverse-string.component';
 import { CountConsonantsComponent } from './components/exercises/count-consonants/count-consonants.component';
 import { AnswerQuestionsComponent } from './components/answer-questions/answer-questions.component';
+import { StudentsStatementComponent } from './components/exercises/students-statement/students-statement.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AnswerQuestionsComponent } from './components/answer-questions/answer-q
     CheckPalindromeComponent,
     ReverseStringComponent,
     CountConsonantsComponent,
-    AnswerQuestionsComponent
+    AnswerQuestionsComponent,
+    StudentsStatementComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

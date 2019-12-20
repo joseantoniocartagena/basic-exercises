@@ -1,0 +1,30 @@
+<h1>Students statement</h1>
+<p>
+  En un salón se tienen las notas de 14 alumnos; de los cuales se desea saber
+  cuál fue el promedio de todas las notas, cuál fue la nota mayor y la nota
+  menor. Así como la cantidad de aprobados en el curso (Para Aprobar la
+  asignatura se requiere de una nota mayor o igual a 3.0).
+</p>
+<hr />
+<i>Solution is equal for 14 or n so... Notes will be generated random</i>
+<p>Students number:</p>
+<input [(ngModel)]="length" type="number" placeholder="Counting numbers" />
+<br />
+<button (click)="submit()">Submit</button>
+<br />
+<table class="info" *ngIf="students.length">
+  <tr>
+    <th>Student grades</th>
+    <th>Average</th>
+    <th>Highest grade</th>
+    <th>Lowest grade</th>
+    <th># of approved students</th>
+  </tr>
+  <tr *ngFor="let grade of students; let i = index">
+    <td>{{ grade }}</td>
+    <td *ngIf="i == 0">{{ avg }}</td>
+    <td *ngIf="i == 0">{{ high }}</td>
+    <td *ngIf="i == 0">{{ low }}</td>
+    <td *ngIf="i == 0">{{ apr }}</td>
+  </tr>
+</table>

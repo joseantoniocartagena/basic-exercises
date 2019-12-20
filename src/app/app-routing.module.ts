@@ -8,6 +8,7 @@ import { CheckPalindromeComponent } from "./components/exercises/check-palindrom
 import { ReverseStringComponent } from "./components/exercises/reverse-string/reverse-string.component";
 import { CountConsonantsComponent } from "./components/exercises/count-consonants/count-consonants.component";
 import { AnswerQuestionsComponent } from "./components/answer-questions/answer-questions.component";
+import { StudentsStatementComponent } from "./components/exercises/students-statement/students-statement.component";
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "reversestring", component: ReverseStringComponent },
   { path: "countconsonants", component: CountConsonantsComponent },
   { path: "answerquestions", component: AnswerQuestionsComponent },
+  { path: "studentsstatement", component: StudentsStatementComponent },
   { path: "**", redirectTo: "" }
 ];
 
