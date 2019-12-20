@@ -71,3 +71,63 @@
 </p>
 <hr />
 <p>¿Cuál es la diferencia entre SOA y Microservicios?</p>
+<br />
+<p>
+  <b>Re: </b>La diferencia es que SOA está pensado para ser una sola aplicación
+  orientada a servicios mientras que la arquitectura de microservicios pretende
+  exponer varios servicios para ser usado por una o varias aplicaciones
+</p>
+<hr />
+<p>
+  ¿Por qué podría ser más compleja la comunicación por una red en una
+  arquitectura por microservicios?
+</p>
+<br />
+<p>
+  <b>Re: </b>Los servicios pueden estar alojados en sitios diferentes y debido a
+  esto la respuesta del ping puede ser demorado, es decir el problema es el
+  tiempo que los paquetes tardan en ir y volver y si se han perdido datos por el
+  camino
+</p>
+<hr />
+<p>
+  Proponga un método de comunicación para una arquitectura por microservicios.
+</p>
+<br />
+<p>
+  <b>Re: </b>Supongamos que tenemos una DB de compras alojada en un servidor SAP
+  el cual solo permite comunicación por RFC, la información de los usuarios está
+  alojada en MongoDB pues porque el cliente así lo desea, entonces ¿cómo
+  solucionamos esto?, Desde el servidor SAP se levanta un programa que expone
+  una RFC y esta es consumida por otra aplicación JAVA para exponer la
+  información en rest, debido a que se va a consumir desde una aplicación móvil
+  híbrida, la información del usuario se recupera desde un servidor Node.js que
+  cifra contraseñas y genera tokens de sesión, ya en el cliente la aplicación
+  móvil consume el servicio Node.js para obtener la información del usuario y
+  teniendo esta hace petición rest al servidor JAVA para obtener la información
+  de sus compras
+</p>
+<hr />
+<p>¿Qué es y cómo funciona Docker?</p>
+<br />
+<p>
+  Docker es una herramienta que garantiza que las aplicaciones funcionen igual
+  en todos los sitios en donde sean desplegadas, resolviendo los problemas
+  típicos de la construcción, de la distribución o de la ejecución del código,
+  haciendo una analogía son como un buque porta contenedores estándar, en donde
+  se pueden enviar piezas de software que después pueden ser unidas en otro
+  sitio tal como si el buque viajase de Inglaterra a EEUU (Docker <b>NO</b> es
+  una máquina virtual) no es grande, no es un sistema operativo completo, sólo
+  contiene piezas funcionales de software
+</p>
+<hr />
+<p>¿Qué es y cómo funciona Kubernetes?</p>
+<br />
+<p>
+  <b>Re: </b>Kubernetes es un orquestador de contenedores este busca minimizar
+  los errores de los procesos manuales, con esto se pueden crear servidores de
+  aplicaciones que pueden estar compuestos de varios contenedores que pueden
+  estar o no en el mismo host, dado el ejemplo anterior Kubernetes vendría a
+  cumplir el rol de un puerto que recibe los contenedores y los distribuye en
+  sus sitios para su funcionamiento, esto puede hacerse programando un cluster
+</p>
