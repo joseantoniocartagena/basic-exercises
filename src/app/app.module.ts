@@ -18,6 +18,7 @@ import { ReverseStringComponent } from './components/exercises/reverse-string/re
 import { CountConsonantsComponent } from './components/exercises/count-consonants/count-consonants.component';
 import { AnswerQuestionsComponent } from './components/answer-questions/answer-questions.component';
 import { StudentsStatementComponent } from './components/exercises/students-statement/students-statement.component';
+import { DiceStatementComponent } from './components/exercises/dice-statement/dice-statement.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { StudentsStatementComponent } from './components/exercises/students-stat
     ReverseStringComponent,
     CountConsonantsComponent,
     AnswerQuestionsComponent,
-    StudentsStatementComponent
+    StudentsStatementComponent,
+    DiceStatementComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

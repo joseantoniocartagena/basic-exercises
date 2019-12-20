@@ -16,7 +16,7 @@ export class StudentsStatementComponent {
     const hGrade = 5;
     this.students = [];
     for (let i = this.length - 1; i >= 0; --i)
-      this.students[i] = Math.floor(Math.random() * hGrade);
+      this.students[i] = Math.floor(Math.random() * (hGrade + 1));
     this.average();
     this.highest();
     this.lowest();

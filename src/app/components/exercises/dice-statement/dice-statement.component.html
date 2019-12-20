@@ -1,0 +1,87 @@
+<h1>Dice statement</h1>
+<p>
+  Simular 20 tiradas de dos dados y contar las veces que entre los dos suman 10.
+</p>
+<hr />
+<i>Solution is equal for 20 or n so...</i>
+<p>Dice rolls #:</p>
+<input [(ngModel)]="length" type="number" placeholder="Counting numbers" />
+<br />
+<button (click)="submit()">Submit</button>
+<br />
+<table class="info" *ngIf="dice">
+  <tr>
+    <th>Dice 1</th>
+    <th>Dice 2</th>
+    <th>Rolls sum 10</th>
+  </tr>
+  <tr *ngFor="let d1 of dice[0]; let i = index">
+    <td>{{ d1 }}</td>
+    <td>{{ dice[1][i] }}</td>
+    <td *ngIf="i == 0">{{ sum }}</td>
+  </tr>
+</table>
+
+<br />
+<p>Code:</p>
+<div
+  style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <pre style="margin: 0; line-height: 125%">
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17
+   18
+   19
+   20
+   21</pre
+          >
+        </td>
+        <td>
+          <pre
+            style="margin: 0; line-height: 125%"
+          ><span style="color: #008800; font-weight: bold">import</span>  &#123; Component  &#125; from <span style="background-color: #fff0f0">"@angular/core"</span>;
+   
+   <span style="color: #FF0000; background-color: #FFAAAA">@</span>Component( &#123;
+     selector<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"app-dice-statement"</span>,
+     templateUrl<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"./dice-statement.component.html"</span>,
+     styleUrls<span style="color: #333333">:</span> [<span style="background-color: #fff0f0">"./dice-statement.component.css"</span>]
+    &#125;)
+   <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">class</span> DiceStatementComponent  &#123;
+     <span style="color: #008800; font-weight: bold">private</span> length;
+     <span style="color: #008800; font-weight: bold">private</span> dice;
+     <span style="color: #008800; font-weight: bold">private</span> sum;
+     submit()  &#123;
+       <span style="color: #008800; font-weight: bold">this</span>.dice <span style="color: #333333">=</span> [[], []];
+       <span style="color: #008800; font-weight: bold">this</span>.sum <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+       <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">let</span> i <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.length <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>; i <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span>; <span style="color: #333333">--</span>i)  &#123;
+         <span style="color: #008800; font-weight: bold">this</span>.dice[<span style="color: #0000DD; font-weight: bold">0</span>][i] <span style="color: #333333">=</span> <span style="color: #007020">Math</span>.floor(<span style="color: #007020">Math</span>.random() <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">6</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+         <span style="color: #008800; font-weight: bold">this</span>.dice[<span style="color: #0000DD; font-weight: bold">1</span>][i] <span style="color: #333333">=</span> <span style="color: #007020">Math</span>.floor(<span style="color: #007020">Math</span>.random() <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">6</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+         <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">this</span>.dice[<span style="color: #0000DD; font-weight: bold">0</span>][i] <span style="color: #333333">+</span> <span style="color: #008800; font-weight: bold">this</span>.dice[<span style="color: #0000DD; font-weight: bold">1</span>][i] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">10</span>) <span style="color: #008800; font-weight: bold">this</span>.sum<span style="color: #333333">++</span>;
+        &#125;
+      &#125;
+    &#125;
+   </pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
