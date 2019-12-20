@@ -10,6 +10,7 @@ import { CountConsonantsComponent } from "./components/exercises/count-consonant
 import { AnswerQuestionsComponent } from "./components/answer-questions/answer-questions.component";
 import { StudentsStatementComponent } from "./components/exercises/students-statement/students-statement.component";
 import { DiceStatementComponent } from "./components/exercises/dice-statement/dice-statement.component";
+import { DominoesStatementComponent } from "./components/exercises/dominoes-statement/dominoes-statement.component";
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: "answerquestions", component: AnswerQuestionsComponent },
   { path: "studentsstatement", component: StudentsStatementComponent },
   { path: "dicestatement", component: DiceStatementComponent },
+  { path: "dominoesstatement", component: DominoesStatementComponent },
   { path: "**", redirectTo: "" }
 ];
 

@@ -1,0 +1,94 @@
+<h1>Dominoes statement</h1>
+<p>
+  Escribir un algoritmo que muestre todas las fichas de dominó, sin repetir.
+</p>
+<br />
+<i
+  >Well this code could be done using an array of type [][] but dominoes are
+  limited pieces 28 excatly so assigning each one to a number should do the
+  trick 🀰 🀱 🀲 🀳 🀴 🀵 🀶 🀷 🀸 🀹 🀺 🀻 🀼 🀽 🀾 🀿</i
+>
+<hr />
+<button (click)="generate()">Show dominoes</button>
+<br />
+<ul>
+  <li *ngFor="let dominoe of dominoes" style="list-style: none;">
+    <p *ngIf="dominoe == 0" class="dominoes">🀱</p>
+    <p *ngIf="dominoe == 1" class="dominoes">🀲</p>
+    <p *ngIf="dominoe == 2" class="dominoes">🀳</p>
+    <p *ngIf="dominoe == 3" class="dominoes">🀴</p>
+    <p *ngIf="dominoe == 4" class="dominoes">🀵</p>
+    <p *ngIf="dominoe == 5" class="dominoes">🀶</p>
+    <p *ngIf="dominoe == 6" class="dominoes">🀷</p>
+    <p *ngIf="dominoe == 7" class="dominoes">🀹</p>
+    <p *ngIf="dominoe == 8" class="dominoes">🀺</p>
+    <p *ngIf="dominoe == 9" class="dominoes">🀻</p>
+    <p *ngIf="dominoe == 10" class="dominoes">🀼</p>
+    <p *ngIf="dominoe == 11" class="dominoes">🀽</p>
+    <p *ngIf="dominoe == 12" class="dominoes">🀾</p>
+    <p *ngIf="dominoe == 13" class="dominoes">🁁</p>
+    <p *ngIf="dominoe == 14" class="dominoes">🁂</p>
+    <p *ngIf="dominoe == 15" class="dominoes">🁃</p>
+    <p *ngIf="dominoe == 16" class="dominoes">🁄</p>
+    <p *ngIf="dominoe == 17" class="dominoes">🁅</p>
+    <p *ngIf="dominoe == 18" class="dominoes">🁉</p>
+    <p *ngIf="dominoe == 19" class="dominoes">🁊</p>
+    <p *ngIf="dominoe == 20" class="dominoes">🁋</p>
+    <p *ngIf="dominoe == 21" class="dominoes">🁌</p>
+    <p *ngIf="dominoe == 22" class="dominoes">🁑</p>
+    <p *ngIf="dominoe == 23" class="dominoes">🁒</p>
+    <p *ngIf="dominoe == 24" class="dominoes">🁓</p>
+    <p *ngIf="dominoe == 25" class="dominoes">🁙</p>
+    <p *ngIf="dominoe == 26" class="dominoes">🁚</p>
+    <p *ngIf="dominoe == 27" class="dominoes">🁡</p>
+  </li>
+</ul>
+<p>Code: </p>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tbody><tr><td><pre style="margin: 0; line-height: 125%"> 1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17
+   18
+   19
+   20
+   21
+   22
+   23
+   24</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span>  &#123; Component  &#125; from <span style="background-color: #fff0f0">"@angular/core"</span>;
+   
+   <span style="color: #FF0000; background-color: #FFAAAA">@</span>Component( &#123;
+     selector<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"app-dominoes-statement"</span>,
+     templateUrl<span style="color: #333333">:</span> <span style="background-color: #fff0f0">"./dominoes-statement.component.html"</span>,
+     styleUrls<span style="color: #333333">:</span> [<span style="background-color: #fff0f0">"./dominoes-statement.component.css"</span>]
+    &#125;)
+   <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">class</span> DominoesStatementComponent  &#123;
+     <span style="color: #008800; font-weight: bold">private</span> dominoes;
+     generate()  &#123;
+       <span style="color: #008800; font-weight: bold">let</span> top <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">28</span>,
+         current <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>,
+         tmp;
+       <span style="color: #008800; font-weight: bold">this</span>.dominoes <span style="color: #333333">=</span> [];
+       <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">let</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">27</span>; i <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span>; <span style="color: #333333">--</span>i) <span style="color: #008800; font-weight: bold">this</span>.dominoes[i] <span style="color: #333333">=</span> i;
+       <span style="color: #008800; font-weight: bold">while</span> (<span style="color: #333333">--</span>top)  &#123;
+         current <span style="color: #333333">=</span> <span style="color: #007020">Math</span>.floor(<span style="color: #007020">Math</span>.random() <span style="color: #333333">*</span> (top <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>));
+         tmp <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.dominoes[current];
+         <span style="color: #008800; font-weight: bold">this</span>.dominoes[current] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.dominoes[top];
+         <span style="color: #008800; font-weight: bold">this</span>.dominoes[top] <span style="color: #333333">=</span> tmp;
+        &#125;
+       console.log(<span style="color: #008800; font-weight: bold">this</span>.dominoes);
+      &#125;
+    &#125;
+   </pre></td></tr></tbody></table></div>

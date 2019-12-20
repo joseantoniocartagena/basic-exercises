@@ -19,6 +19,7 @@ import { CountConsonantsComponent } from './components/exercises/count-consonant
 import { AnswerQuestionsComponent } from './components/answer-questions/answer-questions.component';
 import { StudentsStatementComponent } from './components/exercises/students-statement/students-statement.component';
 import { DiceStatementComponent } from './components/exercises/dice-statement/dice-statement.component';
+import { DominoesStatementComponent } from './components/exercises/dominoes-statement/dominoes-statement.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DiceStatementComponent } from './components/exercises/dice-statement/di
     CountConsonantsComponent,
     AnswerQuestionsComponent,
     StudentsStatementComponent,
-    DiceStatementComponent
+    DiceStatementComponent,
+    DominoesStatementComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
